@@ -6,7 +6,7 @@
   <display-name>RRIMS</display-name>
   <servlet>
     <servlet-name>s1</servlet-name>
-    <servlet-class>Servlet.servlet1</servlet-class>
+    <servlet-class>servlet.Servlet1</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>s1</servlet-name>
