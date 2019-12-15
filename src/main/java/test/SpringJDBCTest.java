@@ -40,5 +40,6 @@ public class SpringJDBCTest {
     static void xml2() {
         JdbcTemplate jt = (JdbcTemplate) ac.getBean("jdbcTemplate");
         jt.update("insert into test values (3)");
+        ac.getBean("123");
     }
 }
