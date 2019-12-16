@@ -1,5 +1,7 @@
 package servlet;
 
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 import test.LoggerTest;
 
 import javax.servlet.ServletException;
@@ -11,6 +13,7 @@ import java.io.IOException;
 public class Servlet1 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+
 //        super.doGet(req, resp);
         System.out.println("123");
         LoggerTest.main(null);

@@ -9,7 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 public class SpringJDBCTest {
     static Logger logger = LogManager.getLogger(SpringJDBCTest.class);
-    static ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+    private static ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
 
     public static void main(String[] args) {
 //        xml();
@@ -37,9 +37,9 @@ public class SpringJDBCTest {
     }
 
     // 纯xml实现数据库访问
-    static void xml2() {
+    private static void xml2() {
         JdbcTemplate jt = (JdbcTemplate) ac.getBean("jdbcTemplate");
-        jt.update("insert into test values (3)");
-        ac.getBean("123");
+        jt.update("insert into test values (8)");
+        ac.getBean("abc");
     }
 }
