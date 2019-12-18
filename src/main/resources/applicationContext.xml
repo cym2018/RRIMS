@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <mvc:default-servlet-handler/>
-    <bean class="Beans.Bean1" name="abc" factory-method="creat" lazy-init="false"/>
-
-    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource" lazy-init="true"
-          p:driverClassName="com.mysql.cj.jdbc.Driver"
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource"
+          lazy-init="true" p:driverClassName="com.mysql.cj.jdbc.Driver"
           c:url="jdbc:mysql://localhost:3306/RRIMS?serverTimezone=UTC&amp;characterEncoding=utf8"
           c:username="root" c:password="ab370126"/>
 
-    <bean class="org.springframework.jdbc.core.JdbcTemplate" name="jdbcTemplate" lazy-init="true"
-          p:dataSource-ref="dataSource">
-
+    <bean class="org.springframework.jdbc.core.JdbcTemplate" name="jdbcTemplate"
+          lazy-init="true" p:dataSource-ref="dataSource">
     </bean>
 
 </beans>

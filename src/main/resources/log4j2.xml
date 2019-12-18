@@ -8,7 +8,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="org.springframework" level="ERROR"/>
+        <Logger name="org.springframework" level="debug"/>
         <Root level="ALL">
             <AppenderRef ref="Console"/>
         </Root>
