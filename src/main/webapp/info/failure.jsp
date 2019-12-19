@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: cuige
-  Date: 2019/12/17
-  Time: 21:38
+  Date: 2019/12/18
+  Time: 23:28
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>success</title>
+    <title>failure</title>
 </head>
 <body>
-运行成功!
+操作失败!
 </body>
 </html>

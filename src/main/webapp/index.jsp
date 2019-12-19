@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <html>
 <head>
-    <title>xyz.cym2018.test</title>
+    <title>test</title>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/ct">执行Controller</a>
+<a href="${pageContext.request.contextPath}/ct">执行Controller</a><br/>
+<a href="user/register.jsp">注册</a><br/>
+<a href="${pageContext.request.contextPath}/userlist">用户列表</a><br/>
 </body>
 </html>

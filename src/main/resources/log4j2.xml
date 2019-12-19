@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Configuration xmlns="http://logging.apache.org/log4j/2.0/config" status="WARN">
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config" status="info">
 
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
@@ -8,7 +8,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="org.springframework" level="debug"/>
+        <Logger name="org" level="WARN"/>
         <Root level="ALL">
             <AppenderRef ref="Console"/>
         </Root>

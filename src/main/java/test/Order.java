@@ -1,4 +1,4 @@
-package xyz.cym2018.test;
+package test;
 
 import org.springframework.stereotype.Component;
 

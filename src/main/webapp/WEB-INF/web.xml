@@ -5,14 +5,14 @@
     <display-name>RRIMS</display-name>
 
 
-<!--    &lt;!&ndash; spring 父容器 &ndash;&gt;-->
-<!--    <context-param>-->
-<!--        <param-name>contextConfigLocation</param-name>-->
-<!--        <param-value>classpath:applicationContext.xml</param-value>-->
-<!--    </context-param>-->
-<!--    <listener>-->
-<!--        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-<!--    </listener>-->
+    <!-- spring 父容器 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
     <!-- springMVC 子容器 -->
     <servlet>

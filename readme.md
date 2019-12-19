@@ -31,7 +31,38 @@
 >
 > springMVC 包括两个容器,第一个是spring(父)容器,第二个是springMVC(子)容器
 >
-> springMVC子容器负责扫描controller,spring父容器负责初始化子容器,扫描其他bean类
+> springMVC子容器负责扫描controller,spring父容器负责初始化子容器,扫描其他bean类,事务增强
+>
+>将controller扫描至spring容器,或者springMVC容器配置错误,会导致无法访问controller
 >
 > 参考: [(csdn)叫我吕小布:springmvc不进入Controller导致404](https://blog.csdn.net/qq_36769100/article/details/71746449)
+
+## 2019年12月19日 12点52分
+> 经过对比后,决定采用Hibernate框架,
 >
+> 做出一个非常简陋的注册页面和用户列表页面.
+>
+> 意味着springMVC框架搭建完毕,前后端交互,数据库连接都已经解决
+>
+> 剩下的进度应该会很快
+>
+> 前端留在最后
+
+
+
+
+## 对SpringMVC框架的理解
+> 原生javaEE项目:
+>> jsp页面显示
+>>
+>> web.xml决定处理请求的servlet
+>>
+>>servlet处理请求,返会数据
+> 
+>SpringMVC项目:
+>
+>> 所有的http请求都交给springMVC的servlet 'DispatcherServlet' 处理
+>>
+>> DispatcherServlet决定处理请求的Controller (或者静态请求还给web容器处理)
+>>
+>> 由控制反转生成Controller需要的参数

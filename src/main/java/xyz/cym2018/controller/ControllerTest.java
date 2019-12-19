@@ -1,18 +1,20 @@
-package xyz.cym2018.mvc;
+package xyz.cym2018.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import test.Bean1;
+import xyz.cym2018.tools.Beans;
 
 @Controller
 public class ControllerTest {
-    static Logger logger = LogManager.getLogger(ControllerTest.class);
+    private static Logger logger = LogManager.getLogger(ControllerTest.class);
     private String name;
 
     ControllerTest() {
-        logger.info("ControllerTest");
+        logger.info("ControllerTest(0)");
     }
 
     public String getName() {
@@ -25,8 +27,9 @@ public class ControllerTest {
 
     @RequestMapping("/ct")
     public String t1(Model model) {
-        logger.info("调用");
-        return "success";
+        Bean1 b1 = (Bean1) Beans.getBean("Bean1");
+        logger.info(b1.getName());
+        return "info/success";
     }
 }
 

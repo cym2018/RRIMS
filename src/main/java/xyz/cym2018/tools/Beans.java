@@ -1,4 +1,4 @@
-package xyz.cym2018.mBeans;
+package xyz.cym2018.tools;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,8 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Component("Beans")
 public class Beans implements ApplicationContextAware {
-    static ApplicationContext applicationContext;
-    static Logger logger = LogManager.getLogger(Beans.class);
+    Beans(){
+        logger.info("Beans(0)");
+    }
+    private static ApplicationContext applicationContext;
+    private static Logger logger = LogManager.getLogger(Beans.class);
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -18,7 +21,7 @@ public class Beans implements ApplicationContextAware {
         Beans.applicationContext = applicationContext;
     }
 
-    public Object getBean(String beanName) {
+    public static Object getBean(String beanName) {
         return applicationContext.getBean(beanName);
     }
 }
