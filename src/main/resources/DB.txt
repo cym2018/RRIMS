@@ -1,2 +1,24 @@
 create database RRIMS;
+# 用户表/店铺表
+# 用户使用 userid username password type字段
+# 店铺使用 userid username type belong字段
+create table user(
+userid int primary key auto_increment,
+username varchar(31) not null unique,
+password varchar(31),
+type int default(0),
+belong int default(0));
 
+create table goods(
+goodsid int primary key auto_increment,
+name varchar(31) not null unique,
+price decimal not null,
+state int default(0)
+);
+
+create table orders(
+orderid int,
+userid int,
+shopid int,
+goodsid int
+);
