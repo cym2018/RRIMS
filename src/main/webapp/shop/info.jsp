@@ -14,7 +14,7 @@
 商铺id:${shopInfo.userid}<br/>
 店铺名称:${shopInfo.username}<br/>
 店铺所有者:${sessionScope.username}<br/>
-管理菜单:<br/>
+<a href="${pageContext.request.contextPath}/shop/menu">管理菜单</a><br/>
 管理订单:<br/>
 </body>
 </html>

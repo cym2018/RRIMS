@@ -12,7 +12,8 @@ public class Goods {
     @Id
     @GeneratedValue(generator = "increment")
     private int goodsid;
-
+    @Column
+    private int shopid;
     @Column
     private String name;
     @Column
@@ -21,6 +22,14 @@ public class Goods {
     private int state;
 
     Goods() {
+    }
+
+    public int getShopid() {
+        return shopid;
+    }
+
+    public void setShopid(int shopid) {
+        this.shopid = shopid;
     }
 
     public String getName() {

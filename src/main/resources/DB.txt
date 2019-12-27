@@ -16,6 +16,7 @@ belong int default(0));
 # 商品表
 create table goods(
 goodsid int primary key auto_increment,
+shopid int,
 name varchar(31) not null unique,
 price decimal not null,
 state int default(0)

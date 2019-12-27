@@ -17,6 +17,8 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
+    UserService userService;
+    @Autowired
     HttpSession session;
     @Autowired
     HttpServletRequest request;
@@ -37,10 +39,10 @@ public class UserController {
             return modelAndView;
         }
         // 查询用户信息
-        User uUser = UserService.findByUserID(iUserID);
+        User uUser = userService.findByUserID(iUserID);
         modelAndView.addObject("userInfo", uUser);
         // 查询店铺信息
-        List Shop = UserService.findByBelong(uUser.getUserid());
+        List Shop = userService.findByBelong(uUser.getUserid());
         modelAndView.addObject("shopInfo", Shop);
         return modelAndView;
     }

@@ -46,6 +46,7 @@
     </bean>
     <context:component-scan base-package="xyz.cym2018.DAO"/>
     <context:component-scan base-package="xyz.cym2018.tools"/>
+    <context:component-scan base-package="xyz.cym2018.service"/>
     <!--    <tx:annotation-driven   transaction-manager="transactionManager" />-->
 
 

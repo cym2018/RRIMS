@@ -90,6 +90,9 @@
 >> 订单表|orders|orderid|shopid|userid|goodsid|
 > 参见/src/main/resources/DB.txt
 
+## 2019年12月27日 16点34分
+> 使用filter登陆验证
+> 完成了用户注册,登陆,信息查看,新建店铺功能
 
 
 ## 对SpringMVC框架的理解

@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
     @Autowired
+    UserService userService;
+    @Autowired
     HttpSession session;
     @Autowired
     HttpServletRequest request;
@@ -28,7 +30,7 @@ public class LoginController {
     public ModelAndView register(User user) {
         ModelAndView modelAndView = new ModelAndView("info");
         // 注册
-        if (UserService.Register(user)) {
+        if (userService.Register(user)) {
             modelAndView.addObject("message", "注册成功");
         } else {
             modelAndView.addObject("message", "用户名已存在");
@@ -43,9 +45,9 @@ public class LoginController {
         ModelAndView modelAndView = new ModelAndView("info");
 
         // 登陆验证
-        if (UserService.Login(user)) {
+        if (userService.Login(user)) {
             // 获取用户信息&保存
-            user = UserService.findByUsername(user.getUsername());
+            user = userService.findByUsername(user.getUsername());
             session.setAttribute("userID", user.getUserid());
             session.setAttribute("username", user.getUsername());
             modelAndView.addObject("message", "登陆成功");

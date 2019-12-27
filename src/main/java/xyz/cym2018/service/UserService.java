@@ -20,14 +20,14 @@ public class UserService {
         logger.info("UserService(0)");
     }
 
-    public static boolean Register(String username, String password) {
+    public boolean Register(String username, String password) {
         User user = (User) Beans.getBean("User");
         user.setUsername(username);
         user.setPassword(password);
         return Register(user);
     }
 
-    public static boolean Register(User user) {
+    public boolean Register(User user) {
         try (Session session = Base.getSession()) {
             session.beginTransaction();
             session.save(user);
@@ -39,7 +39,7 @@ public class UserService {
         return true;
     }
 
-    public static boolean Login(String username, String password) {
+    public boolean Login(String username, String password) {
         User user = (User) Beans.getBean("User");
         user.setUsername(username);
         user.setPassword(password);
@@ -47,7 +47,7 @@ public class UserService {
     }
 
 
-    public static boolean Login(User user) {
+    public boolean Login(User user) {
         if (user.getUsername() == null || user.getPassword() == null) {
             return false;
         }
@@ -63,17 +63,17 @@ public class UserService {
         }
     }
 
-    public static List SelectAll() {
+    public List SelectAll() {
         Session session = Base.getSession();
         return session.createQuery("from xyz.cym2018.DAO.User").list();
     }
 
-    public static List SelectAllUser() {
+    public List SelectAllUser() {
         Session session = Base.getSession();
         return session.createQuery("from xyz.cym2018.DAO.User where type!='2'").list();
     }
 
-    public static List SelectShopById(int id) {
+    public List SelectShopById(int id) {
         Session session = Base.getSession();
         String hql = "from xyz.cym2018.DAO.User where belong=?1";
         Query query = session.createQuery(hql);
@@ -81,14 +81,15 @@ public class UserService {
         return query.list();
     }
 
-    public static User findByUserID(int id){
+    public User findByUserID(int id) {
         Session session = Base.getSession();
         String hql = "from xyz.cym2018.DAO.User where userid=?1";
         Query query = session.createQuery(hql);
         query.setParameter(1, id);
         return (User) query.list().get(0);
     }
-    public static User findByUsername(String username){
+
+    public User findByUsername(String username) {
         Session session = Base.getSession();
         String hql = "from xyz.cym2018.DAO.User where username=?1";
         Query query = session.createQuery(hql);
@@ -96,12 +97,12 @@ public class UserService {
         return (User) query.list().get(0);
     }
 
-    public static List findByBelong(int belong){
+    public List findByBelong(int belong) {
         Session session = Base.getSession();
         String hql = "from xyz.cym2018.DAO.User where belong=?1";
         Query query = session.createQuery(hql);
         query.setParameter(1, belong);
-        return  query.list();
+        return query.list();
     }
 
 
