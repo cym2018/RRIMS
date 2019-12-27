@@ -83,12 +83,12 @@
 >
 > 5.数据结构
 >
-> 表名|字段1|字段2|字段3|字段4
-> -|-|-|-|-
-> 用户表|userid|username|password|type|
-> 店铺表|shopid|shopname|uid|
-> 商品表|goodsid|name|price|state|shopid|
-> 订单表|orderid|shopid|userid|goodsid|
+> 表名(直观)|表名(代码)|字段1|字段2|字段3|字段4
+> :-:|:-:|:-:|:-:|:-:|:-:
+> 用户表|user|userid|username|password|type|
+> 店铺表|shop|shopid|shopname|uid|
+> 商品表|goods|goodsid|name|price|state|shopid|
+> 订单表|order|orderid|shopid|userid|goodsid|
 
 
 
