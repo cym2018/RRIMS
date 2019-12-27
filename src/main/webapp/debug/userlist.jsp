@@ -15,13 +15,17 @@
 <body>
 <table>
     <tr>
+        <th>id</th>
         <th>用户名</th>
         <th>密码</th>
+        <th>类型</th>
     </tr>
     <c:forEach items="${user}" var="user">
         <tr>
+            <td>${user.userid}</td>
             <td>${user.username}</td>
             <td>${user.password}</td>
+            <td>${user.type}</td>
         </tr>
     </c:forEach>
 </table>

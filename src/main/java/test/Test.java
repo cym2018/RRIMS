@@ -3,6 +3,10 @@ package test;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import xyz.cym2018.DAO.Base;
@@ -10,6 +14,7 @@ import xyz.cym2018.DAO.User;
 
 import javax.transaction.Transactional;
 import java.util.Arrays;
+import java.util.List;
 
 public class Test {
 
@@ -17,12 +22,25 @@ public class Test {
 //    private ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
 
     public static void main(String[] args) {
-        Test test = new Test();
+//        Test test = new Test();
 //        test.Hibernate();
 //        test.String();
-        test.Spring();
+//        test.Spring();
+        HibernateTest();
+
     }
 
+    @SuppressWarnings("JpaQlInspection")
+    private static void HibernateTest(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Session session= Base.getSession();
+//        Query query=session.createQuery("from xyz.cym2018.DAO.User where id=1");
+        Query query=session.createQuery("from xyz.cym2018.DAO.User where username=?1");
+        query.setParameter(1,"root");
+        List result=query.getResultList();
+        System.out.println(result.get(0).toString());
+
+    }
     @Transactional
     void Hibernate() {
         try {
@@ -50,6 +68,8 @@ public class Test {
 
     private void Spring() {
 //        ac = new ClassPathXmlApplicationContext("dispatcher-servlet.xml");
+        ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
+
 //        System.out.println("123");
 //        logger.info("获取Bean abc");
 //        Bean1 b1 = (Bean1) ac.getBean("Bean1");

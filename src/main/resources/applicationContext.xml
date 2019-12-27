@@ -14,7 +14,7 @@
 
     <context:property-placeholder location="classpath:spring.properties"/>
 
-    <context:component-scan base-package="xyz.cym2018.DAO"/>
+
 
     <bean name="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource"
@@ -24,7 +24,7 @@
           c:password="${jdbcPassword}"/>
 
     <bean name="sessionFactory"
-          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" destroy-method="destroy">
+          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" >
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
@@ -44,7 +44,8 @@
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-
+    <context:component-scan base-package="xyz.cym2018.DAO"/>
+    <context:component-scan base-package="xyz.cym2018.tools"/>
     <!--    <tx:annotation-driven   transaction-manager="transactionManager" />-->
 
 

@@ -25,10 +25,9 @@ public class ControllerTest {
         this.name = name;
     }
 
-    @RequestMapping("/ct")
+    @RequestMapping("/runController")
     public String t1(Model model) {
-        Bean1 b1 = (Bean1) Beans.getBean("Bean1");
-        logger.info(b1.getName());
+        Bean1 b1 = (Bean1) Beans.getBean("User");
         return "info/success";
     }
 }

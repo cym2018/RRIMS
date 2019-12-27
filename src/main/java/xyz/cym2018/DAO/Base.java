@@ -21,10 +21,8 @@ public class Base {
 
     @Autowired
     Base(SessionFactory sessionFactory) {
-        logger.info("Base(1)");
+        logger.info("Base(1) 注入sessionFactory");
         Base.sessionFactory = sessionFactory;
-        Test test=new Test();
-        test.log();
     }
 
 

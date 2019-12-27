@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <html>
 <head>
-    <title>registered</title>
+    <title>register</title>
 </head>
 <body>
 <form method="get" action="${pageContext.request.contextPath}/register">
@@ -22,7 +22,6 @@
     </label>
     <br>
     <button type="submit">注册</button>
-
 </form>
 </body>
 </html>

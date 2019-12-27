@@ -9,19 +9,18 @@ import org.springframework.stereotype.Component;
 
 @Component("Beans")
 public class Beans implements ApplicationContextAware {
-    Beans(){
-        logger.info("Beans(0)");
-    }
     private static ApplicationContext applicationContext;
     private static Logger logger = LogManager.getLogger(Beans.class);
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        logger.info("setApplicationContext()");
-        Beans.applicationContext = applicationContext;
+    Beans() {
     }
 
     public static Object getBean(String beanName) {
         return applicationContext.getBean(beanName);
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        logger.info("Beans(1) 注入ApplicationContext");
+        Beans.applicationContext = applicationContext;
     }
 }
