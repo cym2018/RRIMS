@@ -87,7 +87,7 @@
 > :-:|:-:|:-:|:-:|:-:|:-:|:-:
 > 用户表|user|userid|username|password|type|belong
 > 商品表|goods|goodsid|name|price|state|shopid|
-> 订单表|order|orderid|shopid|userid|goodsid|
+> 订单表|orders|orderid|shopid|userid|goodsid|
 > 参见/src/main/resources/DB.txt
 
 
