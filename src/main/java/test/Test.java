@@ -34,9 +34,7 @@ public class Test {
     private static void HibernateTest(){
         ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
         Session session= Base.getSession();
-//        Query query=session.createQuery("from xyz.cym2018.DAO.User where id=1");
-        Query query=session.createQuery("from xyz.cym2018.DAO.User where username=?1");
-        query.setParameter(1,"root");
+        Query query=session.createQuery("from xyz.cym2018.DAO.Order");
         List result=query.getResultList();
         System.out.println(result.get(0).toString());
 

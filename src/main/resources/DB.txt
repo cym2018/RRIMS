@@ -23,9 +23,12 @@ state int default(0)
 );
 
 # 订单表
+drop table orders;
 create table orders(
-orderid int,
+orderid int primary key auto_increment,
 userid int,
 shopid int,
-goodsid int
+goodsid int,
+paytime timestamp(3),
+finishtime timestamp(3)
 );

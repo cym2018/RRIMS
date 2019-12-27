@@ -25,6 +25,6 @@
 <br/>
 <a href="creatShop.jsp">新建店铺</a><br>
 <br/>
-<a href="">进入商城</a>
+<a href="/buy/shoplist">进入商城</a>
 </body>
 </html>

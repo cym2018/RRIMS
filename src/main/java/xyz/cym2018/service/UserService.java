@@ -73,6 +73,10 @@ public class UserService {
         return session.createQuery("from xyz.cym2018.DAO.User where type!='2'").list();
     }
 
+    public List SelectAllShop() {
+        Session session = Base.getSession();
+        return session.createQuery("from xyz.cym2018.DAO.User where type=='2'").list();
+    }
     public List SelectShopById(int id) {
         Session session = Base.getSession();
         String hql = "from xyz.cym2018.DAO.User where belong=?1";

@@ -22,7 +22,6 @@ public class User {
 
     public User() {
         Logger logger = LogManager.getLogger(User.class);
-        logger.info("User(0)");
     }
 
     public User(String username, String password) {

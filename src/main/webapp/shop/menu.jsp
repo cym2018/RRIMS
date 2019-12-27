@@ -12,7 +12,6 @@
     <title>menu</title>
 </head>
 <body>
-商品id 商品名称 商品价格
 <table>
     <tr>
         <th>商品id</th>
@@ -29,7 +28,9 @@
                 <a href="${pageContext.request.contextPath}/shop/removeGoods?goodsid=${menu.goodsid}">
                     <button>删除</button>
                 </a>
-                <a href="${pageContext.request.contextPath}/shop/removeGoods?goodsid=${menu.goodsid}">
+            </td>
+            <td>
+                <a href="${pageContext.request.contextPath}/shop/updateselectgoods?goodsid=${menu.goodsid}">
                     <button>修改</button>
                 </a>
             </td>

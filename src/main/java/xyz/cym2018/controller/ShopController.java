@@ -88,6 +88,14 @@ public class ShopController {
         }
         return modelAndView;
     }
+    @RequestMapping("updateselectgoods")
+    public ModelAndView UpdateselectGoods(Goods goods){
+        // goodsid name price
+        ModelAndView modelAndView = new ModelAndView("shop/updateGoods");
+        goods=goodsService.findByGoodsID(goods.getGoodsid());
+        modelAndView.addObject("goods",goods);
+        return modelAndView;
+    }
     @RequestMapping("/updategoods")
     public ModelAndView UpdateGoods(Goods goods){
         // goodsid name price
