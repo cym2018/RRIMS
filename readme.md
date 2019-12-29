@@ -88,7 +88,7 @@
 >> 用户表|user|userid|username|password|type|belong
 >> 商品表|goods|goodsid|name|price|state|shopid|
 >> 订单表|orders|orderid|shopid|userid|goodsid|
-> 参见/src/main/resources/DB.txt
+> 仅代表前期设计,数据库实际结构参见DB.txt
 
 ## 2019年12月27日 16点34分
 > 使用filter登陆验证
