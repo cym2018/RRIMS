@@ -10,8 +10,8 @@ create table user(
 userid int primary key auto_increment,
 username varchar(31) not null unique,
 password varchar(31),
-type int default'0',
-belong int default'0'
+type int default(0),
+belong int default(0)
 );
 
 # state=0 有效 state=1 过期
@@ -25,6 +25,7 @@ state int default (0)
 );
 
 # 订单表
+## mysql
 drop table orders;
 create table orders(
 orderid int primary key auto_increment,
@@ -34,4 +35,15 @@ goodsid int,
 paytime timestamp(3),
 finishtime timestamp(3),
 confirmtime timestamp(3)
+);
+## mariadb
+drop table orders;
+create table orders(
+orderid int primary key auto_increment,
+number int,
+userid int,
+goodsid int,
+paytime datetime,
+finishtime datetime,
+confirmtime datetime
 );
