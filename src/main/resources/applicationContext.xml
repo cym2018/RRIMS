@@ -52,13 +52,13 @@
 
     <aop:aspectj-autoproxy/>
 </beans>
-        <!--    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager"-->
+        <!--    <bean shopId="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager"-->
         <!--          p:sessionFactory-ref="sessionFactory"/>-->
         <!--    <tx:annotation-driven/>-->
         <!--    <aop:aspectj-autoproxy/>-->
 
 
-        <!--    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"-->
+        <!--    <bean shopId="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"-->
         <!--          lazy-init="true" p:dataSource-ref="dataSource">-->
         <!--    </bean>-->
 

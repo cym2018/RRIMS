@@ -110,3 +110,102 @@
 >> DispatcherServlet决定处理请求的Controller (或者静态请求还给web容器处理)
 >>
 >> 由控制反转生成Controller需要的参数
+>
+## 2019年12月29日 00点57分
+> 完成了主要的功能:
+>>注册
+>>
+>>登陆
+>>
+>>商店列表
+>>
+>>菜单
+>>
+>>订单增删改查,状态维护
+>>
+>>用户信息查看
+>>
+>>用户名下商店
+>>
+>>创建商店
+>>
+>>菜单增删改查
+>
+>急需完善
+>>页面显示
+>>
+>>商家确认订单
+>>
+>>用户签收订单
+>>
+>>数据/销量统计
+>
+>可选
+>>JavaScript+html+json显示页面,进一步前后端分离
+>>
+>>使用@Query注解重构代码,增加代码可维护性
+>>
+>>拒绝订单/退货/售后功能
+>>
+>>jpa 多对一
+
+## 2019年12月29日 12点54分
+> 重构代码,更正拼写,变量命名不规范问题
+>
+> 修改提示页面,增加导航内容
+>
+> 修改filter mapping,未登录时允许查看商店列表
+```text
+			RootController
+注册:		/register.jsp
+			/register
+登陆:		/login.jsp
+			/login
+			UserController
+用户信息:	/user/info
+			/user/info/jsp
+SellController
+新建店铺:	/sell/creat.jsp
+			/sell/creat
+店铺信息:	/sell/info
+			/sell/info.jsp
+菜单:		/sell/menu
+			/sell/menu.jsp
+				SellMenuController
+加菜:			/sell/menu/creat.jsp
+				/sell/menu/creat
+删菜:			/sell/menu/delete
+				/message.jsp
+选中菜&改菜:	/sell/menu/select
+				/sell/menu/update.jsp
+				/sell/menu/update
+BuyController
+店铺列表:	/buy/list
+			/buy/list.jsp
+选中店铺:	/buy/shop
+			/buy/shop.jsp
+				BuyShopController
+添加购物车:		/buy/shop/add
+删除购物车:		/buy/shop/remove
+支付:			/buy/shop/pay
+```
+
+## 2019年12月29日 15点02分
+> 部署
+>> [demo](4.cym2018.xyz:8080/)
+>>
+>> 已知问题:
+>>
+>> 1.数据库编码导致的不支持中文
+>>
+>> 2.未知原因导致的不能添加购物车.
+>
+> 代码结构调整
+>> 消除全部警告(忽略unused警告和DAO类中的拼写问题)
+>>
+>> 重新设计url目录
+>>
+>> 更新DB.txt到最新
+>>
+>> 删除多余的配置文件和测试代码
+

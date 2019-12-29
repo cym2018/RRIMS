@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+@SuppressWarnings("unused")
 @Component("Beans")
 public class Beans implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
@@ -20,7 +21,6 @@ public class Beans implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        logger.info("Beans(1) 注入ApplicationContext");
         Beans.applicationContext = applicationContext;
     }
 }

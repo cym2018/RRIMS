@@ -6,7 +6,7 @@
   Time: 12:45
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <html>
 <head>
     <title>menu</title>
@@ -25,19 +25,19 @@
             <td>${menu.name}</td>
             <td>${menu.price}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/shop/removeGoods?goodsid=${menu.goodsid}">
+                <a href="${pageContext.request.contextPath}/sell/menu/delete?goodsid=${menu.goodsid}">
                     <button>删除</button>
                 </a>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/shop/updateselectgoods?goodsid=${menu.goodsid}">
+                <a href="${pageContext.request.contextPath}/sell/menu/select?goodsid=${menu.goodsid}">
                     <button>修改</button>
                 </a>
             </td>
         </tr>
     </c:forEach>
 </table>
-<a href="${pageContext.request.contextPath}/shop/addgoods.jsp">
+<a href="${pageContext.request.contextPath}/sell/menu/creat.jsp">
     <button>添加</button>
 </a>
 

@@ -3,8 +3,8 @@ package xyz.cym2018.DAO;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
+@SuppressWarnings({"unused"})
 @Component
 @Entity
 @Table(name = "goods")
@@ -17,11 +17,10 @@ public class Goods {
     @Column
     private String name;
     @Column
-    private BigDecimal price;
+    private float price;
     @Column
     private int state;
-
-    Goods() {
+    public Goods() {
     }
 
     public int getShopid() {
@@ -48,11 +47,11 @@ public class Goods {
         this.state = state;
     }
 
-    public BigDecimal getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

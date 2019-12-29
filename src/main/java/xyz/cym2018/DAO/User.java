@@ -2,9 +2,12 @@ package xyz.cym2018.DAO;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
+@SuppressWarnings({"unused"})
+@Component
 @Entity
 @Table(name = "User")
 public class User {

@@ -1,4 +1,4 @@
-package xyz.cym2018.DAO;
+package xyz.cym2018.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -6,29 +6,23 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import test.Test;
 import xyz.cym2018.tools.Beans;
 
-@Component("Base")
+@SuppressWarnings({"SpringJavaAutowiredFieldsWarningInspection", "unused"})
+@Component
 public class Base {
+    @Autowired
     static private SessionFactory sessionFactory;
 
     private Logger logger = LogManager.getLogger(Base.class);
 
     Base() {
-        logger.info("Base(0)");
-    }
 
-    @Autowired
-    Base(SessionFactory sessionFactory) {
-        logger.info("Base(1) 注入sessionFactory");
-        Base.sessionFactory = sessionFactory;
     }
 
 
-    public static Session getSession() {
+    Session getSession() {
         if (sessionFactory == null) {
-            System.out.println("sessionFactory is null");
             sessionFactory = (SessionFactory) Beans.getBean("sessionFactory");
         }
         // todo:改为getCurrentSession()

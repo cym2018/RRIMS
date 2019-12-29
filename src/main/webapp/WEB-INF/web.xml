@@ -16,7 +16,7 @@
     </filter>
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
-        <url-pattern>/shop/*</url-pattern>
+        <url-pattern>/sell/*</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
@@ -24,7 +24,7 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
-        <url-pattern>/buy/*</url-pattern>
+        <url-pattern>/buy/shop/*</url-pattern>
     </filter-mapping>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

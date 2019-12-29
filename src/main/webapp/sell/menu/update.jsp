@@ -5,13 +5,13 @@
   Time: 17:52
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <html>
 <head>
     <title>updateGoods</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/shop/updategoods">
+<form action="${pageContext.request.contextPath}/sell/menu/update">
     <input type="hidden" name="goodsid" value="${goods.goodsid}">
     <label>
         商品名:
