@@ -22,7 +22,6 @@ public abstract class TService<T> {
     TService() {
         base = new Base();
         session = base.getSession();
-        session = base.getSession();
     }
 
     // 增

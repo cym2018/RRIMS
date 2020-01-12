@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class LoginFilter extends SessionOperate implements Filter {
     private Logger logger = LogManager.getLogger(LoginFilter.class);
-
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
