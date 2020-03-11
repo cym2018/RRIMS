@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="axios.js"></script>
+</head>
+<body>
+<script>
+    // alert('创建tables1,2,4,7,10');
+    axios.get("/customer/1");
+    axios.get("/customer/2");
+    axios.get("/customer/4");
+    axios.get("/customer/7");
+    axios.get("/customer/10");
+    // alert('添加蔬菜');
+    axios.get("/admin/foods/add?name=冬瓜&price=1");
+    axios.get("/admin/foods/add?name=西瓜&price=3");
+    axios.get("/admin/foods/add?name=南瓜&price=5");
+    axios.get("/admin/foods/add?name=黄瓜&price=7");
+    axios.get("/admin/foods/add?name=倭瓜&price=9");
+    axios.get("/admin/foods/add?name=甜瓜&price=11");
+    axios.get("/admin/foods/add?name=丝瓜&price=13");
+    axios.get("/admin/foods/add?name=白菜&price=15");
+    axios.get("/admin/foods/add?name=豆芽&price=17");
+    axios.get("/admin/foods/add?name=鸡蛋&price=19");
+    // alert('用户1点餐');
+    axios.get("/customer/1/1?number=2");
+    axios.get("/customer/1/7?number=5");
+    // alert('用户2点餐');
+    axios.get("/customer/2/7?number=2");
+    axios.get("/customer/2/3?number=5");
+
+</script>
+
+</body>
+</html>

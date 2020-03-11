@@ -1,0 +1,36 @@
+server:
+  port: 80 # web服务端口
+logging:
+  file:
+    name: application.log
+    total-size-cap: 1024MB # 最大日志大小
+    max-history: 365 # 日志保留天数
+  level:
+    root: INFO # 全局日志等级
+    web: INFO
+    sql: INFO
+    mygroup: INFO
+  group:
+    mygroup: xyz.cym2018
+spring:
+  thymeleaf:
+    cache: false # thyme 缓存
+  profiles:
+    active: default # 设置 application-{profile}.yml
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+    static-path-pattern: /** # 请求地址格式
+    # resources:
+    # static-locations: 静态文件所在位置
+  datasource:
+    url: jdbc:mysql://localhost:3306/rrims
+    username: root
+    password: ab370126
+  jpa:
+    hibernate:
+      #      ddl-auto: update
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database: mysql

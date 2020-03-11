@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选菜</title>
+    <script src="/js/data.js"></script>
+    <script src="js/axios.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/connect.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <table>
+        <tr>
+            <th></th>
+        </tr>
+    </table>
+</div>
+<script>
+    'use strict';
+    // 获取座位编号
+    const tables_data={};
+    const tables_id = getUrl('id') - 0;
+    const tables_info_url = '/customer/' + tables_id;
+    if (isNaN(tables_id)) {
+        alert("座位编号错误");
+        window.location.replace("/");
+    }
+    let app = new Vue({
+        el: '#app',
+        data: {tables_data},
+        methods: {
+            getData
+        },
+        created() {
+            this.getData(tables_info_url)
+        }
+    });
+</script>
+</body>
+</html>
